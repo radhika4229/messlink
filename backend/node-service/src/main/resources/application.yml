@@ -1,0 +1,10 @@
+﻿spring:
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: org.postgresql.Driver
+logging:
+  level:
+    com.messlink: DEBUG

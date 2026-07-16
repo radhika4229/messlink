@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+node:
+  id: NODE_A
+  neighbors:
+    - id: NODE_B
+      url: ws://localhost:8082/ws/peer
+    - id: NODE_C
+      url: ws://localhost:8083/ws/peer
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/messlink_node_a
+    username: postgres
+    password: Radhika@123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
