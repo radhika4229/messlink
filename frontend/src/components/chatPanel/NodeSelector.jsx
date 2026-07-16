@@ -8,7 +8,7 @@ function NodeSelector () {
     return (
         <div >
             <h4 className='active-node'>Active Node:</h4>
-            <select onChange={handleNode}>
+            <select onChange={handleNode}  className="selector-dropdown">
             <option value="Select a node" class="select-node">--select a Node--</option>
            {nodes.map(node => <option key={node} value={node}>{node}</option>)}
         </select>
