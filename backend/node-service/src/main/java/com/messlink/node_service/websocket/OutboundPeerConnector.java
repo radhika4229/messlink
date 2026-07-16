@@ -48,7 +48,7 @@ public class OutboundPeerConnector {
     }
 
     private void connectWithRetry(StandardWebSocketClient client, NodeProperties.Neighbor neighbor) {
-        int maxAttempts = 10;
+        int maxAttempts = 15;
         long delayMs = 1000;
 
         for (int attempt = 1; attempt <= maxAttempts; attempt++) {
