@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.chat-panel-title{
+    font-family: Open Sans;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+  .node-selection{
+margin-top:12px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.active-node{
+     font-family: Open Sans;
+     font-size:1rem ;
+}
+.destination-node{
+     font-family: Open Sans;
+     font-size:1rem ;
+}
+.selector-dropdown{
+    width:100%;
+    padding:12px 14px;
+    border-radius:10px;
+    border:1px solid #374151;
+    background:#1f2937;
+    color:#ffffff;
+    font-size:0.95rem;
+    outline:none;
+    cursor:pointer;
+    transition:all .2s ease;
+}
+
+.message-composer{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.composer-label{
+    color:#d1d5db;
+    font-size:.95rem;
+    font-weight:500;
+}
+
+.message-input{
+    min-height:130px;
+    resize:none;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    border:1px solid #374151;
+
+    background:#1f2937;
+
+    color:white;
+
+    outline:none;
+
+    font-size:.95rem;
+
+    transition:.2s;
+}
+
+.message-input:focus{
+    border-color:#3b82f6;
+}
+
+.message-input::placeholder{
+    color:#9ca3af;
+}
+
+.send-btn{
+
+    margin-top:10px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.send-btn:hover{
+    background:#1d4ed8;
+}
+/* ---------- Priority ---------- */
+
+.priority-container{
+display:flex;
+flex-direction:column;
+
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.priority-label{
+
+    color:#d1d5db;
+
+    font-size:0.95rem;
+
+    font-weight:500;
+}
+
+.priority-buttons{
+
+    display:flex;
+
+    gap:12px;
+}
+
+.priority-btn{
+
+    flex:1;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:1px solid #374151;
+
+    background:#1f2937;
+
+    color:#d1d5db;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+}
+
+.priority-btn:hover{
+
+    transform:translateY(-2px);
+
+    border-color:#4b5563;
+}
+
+.active-normal{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+}
+
+.active-sos{
+
+    background:#dc2626;
+
+    color:white;
+
+    border:none;
+}
+/* ------- MessageList ---- */
+.message-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+    margin-top:30px;
+}
+
+.message-log-title{
+
+    color:white;
+
+    font-size:1.2rem;
+
+    font-weight:600;
+}
+
+.empty-state{
+
+    margin-top:30px;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#9ca3af;
+}
+
+
+/*  ---- MessageCard ----- */
+.message-card{
+
+    background:#1f2937;
+
+    border:1px solid #374151;
+
+    border-radius:14px;
+
+    padding:18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    transition:.25s;
+}
+
+.message-card:hover{
+
+    transform:translateY(-2px);
+
+    border-color:#4b5563;
+}
+
+.card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.card-header h4{
+
+    margin:0;
+
+    color:white;
+
+    font-size:1rem;
+}
+
+.message-text{
+
+    color:#d1d5db;
+
+    line-height:1.5;
+
+    margin:0;
+}
+
+.card-badges{
+
+    display:flex;
+
+    gap:10px;
+}
+
+.status,
+.priority{
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    font-size:.75rem;
+
+    font-weight:600;
+}
+
+/* -------- Status Colors -------- */
+
+.status-transit{
+
+    background:#facc15;
+
+    color:black;
+}
+
+.status-queued{
+
+    background:#fb923c;
+
+    color:white;
+}
+
+.status-delivered{
+
+    background:#22c55e;
+
+    color:white;
+}
+
+.status-rejected{
+
+    background:#ef4444;
+
+    color:white;
+}
