@@ -1,13 +1,13 @@
 import  { useState } from 'react';
 import './chatpanel.css'
-function NodeSelector () {
+function DestinationSelector () {
     let nodes = ["Node A" , "Node B", "Node C"]
     let [node, setNode] = useState("Select the Node")
     let handleNode = (e) => { setNode(e.target.node)}
 
     return (
         <div class = "node" >
-            <h2>Active Node:</h2>
+            <h2>Destination Node:</h2>
             <select onChange={handleNode}>
             <option value="Select a node" class="select-node">--select a Node--</option>
            {nodes.map(node => <option key={node}>{node}</option>)}
@@ -16,4 +16,4 @@ function NodeSelector () {
     )
 
 }
-export default NodeSelector;
+export default DestinationSelector;
