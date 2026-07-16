@@ -39,17 +39,12 @@ body {
     border-radius:12px;
     padding:20px;
 
-<<<<<<< HEAD
 }
 h1,
 h2 {
   font-family: var(--heading);
   font-weight: 500;
   color: var(--text-h);
-=======
-::-webkit-scrollbar {
-  width: 9px;
->>>>>>> eb0dc15 (feat: add landing page)
 }
 
 ::-webkit-scrollbar-track {

@@ -6,10 +6,10 @@ function DestinationSelector () {
     let handleNode = (e) => { setNode(e.target.value)}
 
     return (
-        <div class = "node" >
+        <div className = "node" >
             <h2 className='destination-node'>Destination Node:</h2>
             <select onChange={handleNode} className="selector-dropdown">
-            <option value="Select a node" class="select-node" >--select a Node--</option>
+            <option value="Select a node" className="select-node" >--select a Node--</option>
            {nodes.map(node => <option key={node}>{node}</option>)}
         </select>
         </div>

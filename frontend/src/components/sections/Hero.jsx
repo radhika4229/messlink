@@ -3,6 +3,7 @@ import Badge from "../ui/Badge";
 import Button from "../ui/Button";
 import StatCard from "../ui/StatCard";
 import GraphPanel from "./GraphPanel";
+import { Link } from "react-router-dom";
 
 const stats = [
   {
@@ -33,8 +34,7 @@ export default function Hero() {
           <Badge>Software Track • First Contact</Badge>
 
           <h1 className="mt-6 font-mono text-5xl font-bold leading-tight text-white md:text-6xl xl:text-7xl">
-            Building a
-            <span className="text-[#3ECF8E]"> Resilient </span>
+            Building a<span className="text-[#3ECF8E]"> Resilient </span>
             Mesh Network
             <br />
             without a
@@ -44,9 +44,9 @@ export default function Hero() {
 
           <p className="mt-8 max-w-xl text-lg leading-8 text-[#94A3B8]">
             Messlink demonstrates peer-to-peer communication using three
-            independent Spring Boot nodes connected through WebSockets.
-            Messages automatically relay, queue, recover after failures,
-            and verify authenticity using digital signatures.
+            independent Spring Boot nodes connected through WebSockets. Messages
+            automatically relay, queue, recover after failures, and verify
+            authenticity using digital signatures.
           </p>
 
           {/* CTA */}
@@ -57,9 +57,9 @@ export default function Hero() {
               <ArrowRight className="ml-2 inline h-4 w-4" />
             </Button>
 
-            <Button variant="secondary">
-              View Architecture
-            </Button>
+            <Link to="/dashboard">
+              <Button variant="secondary">Let's Chat</Button>
+            </Link>
           </div>
 
           {/* Features */}

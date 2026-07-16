@@ -1,19 +1,27 @@
-import  { useState } from 'react';
-import './chatpanel.css'
-function NodeSelector () {
-    let nodes = ["Node A" , "Node B", "Node C"]
-    let [node, setNode] = useState("Select the Node")
-    let handleNode = (e) => { setNode(e.target.value)}
+import { useState } from 'react';
+import './chatpanel.css';
 
-    return (
-        <div >
-            <h4 className='active-node'>Active Node:</h4>
-            <select onChange={handleNode}  className="selector-dropdown">
-            <option value="Select a node" class="select-node">--select a Node--</option>
-           {nodes.map(node => <option key={node} value={node}>{node}</option>)}
-        </select>
-        </div>
-    )
+function NodeSelector({ value, onChange }) {
+  const nodes = [
+    { id: "NODE_A", label: "Node A" },
+    { id: "NODE_B", label: "Node B" },
+    { id: "NODE_C", label: "Node C" },
+  ];
 
+  return (
+    <div>
+      <h4 className='active-node'>Active Node:</h4>
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="selector-dropdown"
+      >
+        <option value="">--select a Node--</option>
+        {nodes.map((n) => (
+          <option key={n.id} value={n.id}>{n.label}</option>
+        ))}
+      </select>
+    </div>
+  );
 }
 export default NodeSelector;
