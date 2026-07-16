@@ -5,7 +5,7 @@ export const messageContract = {
   priority: "NORMAL | SOS",
   timestamp: "2026-07-16T12:00:00Z",
   payload: {
-    message: "Hello from Pulse",
+    message: "Hello from Messlink",
   },
   signature: "HMAC_SHA256_SIGNATURE",
 };

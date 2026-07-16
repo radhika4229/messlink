@@ -43,7 +43,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-8 max-w-xl text-lg leading-8 text-[#94A3B8]">
-            Pulse demonstrates peer-to-peer communication using three
+            Messlink demonstrates peer-to-peer communication using three
             independent Spring Boot nodes connected through WebSockets.
             Messages automatically relay, queue, recover after failures,
             and verify authenticity using digital signatures.

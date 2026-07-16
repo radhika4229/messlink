@@ -13,7 +13,7 @@ export default function WhyMesh() {
       <SectionTitle
         badge="Why Mesh?"
         title="Built for resilience instead of convenience."
-        description="Traditional client-server systems stop working when the server fails. Pulse demonstrates how decentralized communication continues even when network links are interrupted."
+        description="Traditional client-server systems stop working when the server fails. Messlink demonstrates how decentralized communication continues even when network links are interrupted."
       />
 
       <div className="mt-16 grid gap-6 md:grid-cols-2">

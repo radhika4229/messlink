@@ -45,7 +45,8 @@ export default function Navbar() {
           </div>
 
           <span className="font-mono text-xl font-bold text-white">
-            PULSE
+            Messlink
+            
           </span>
         </a>
 

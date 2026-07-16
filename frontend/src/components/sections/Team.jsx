@@ -68,7 +68,7 @@ export default function Team() {
     >
       <SectionTitle
         badge="Our Team"
-        title="Meet the developers behind Pulse."
+        title="Meet the developers behind Messlink."
         description="A collaborative effort combining frontend engineering, backend systems, networking concepts, and distributed communication."
       />
 
@@ -92,7 +92,7 @@ export default function Team() {
         </h3>
 
         <p className="mx-auto mt-4 max-w-3xl leading-8 text-[#94A3B8]">
-          Pulse demonstrates how decentralized communication can remain
+          Messlink demonstrates how decentralized communication can remain
           reliable even during network failures by combining distributed
           routing, message queueing, WebSockets, and secure message
           verification into a single interactive system.

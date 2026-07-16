@@ -34,7 +34,7 @@ export default function Modules() {
     >
       <SectionTitle
         badge="Backend Engine"
-        title="Six independent modules powering Pulse."
+        title="Six independent modules powering Messlink."
         description="Each backend responsibility is isolated into its own module, making the routing engine easier to understand, maintain, and extend."
       />
 

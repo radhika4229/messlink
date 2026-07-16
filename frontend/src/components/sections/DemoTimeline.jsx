@@ -55,7 +55,7 @@ export default function DemoTimeline() {
       <SectionTitle
         badge="Demo Walkthrough"
         title="Follow the journey of a packet."
-        description="This demonstration highlights how Pulse continues to deliver messages even when network connections temporarily fail."
+        description="This demonstration highlights how Messlink continues to deliver messages even when network connections temporarily fail."
       />
 
       <div className="mx-auto mt-16 max-w-5xl">
