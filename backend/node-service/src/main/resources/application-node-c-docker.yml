@@ -1,0 +1,7 @@
+server:
+  port: 8083
+node:
+  id: NODE_C
+  neighbors:
+    - id: NODE_B
+      url: ws://node-b:8082/ws/peer
