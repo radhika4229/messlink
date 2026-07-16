@@ -1,0 +1,71 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: messlink-postgres
+    environment:
+      - POSTGRES_PASSWORD=messlink123
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    networks:
+      - meshnet
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  node-a:
+    build: ./node-service
+    container_name: messlink-node-a
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_PROFILES_ACTIVE=node-a-docker
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/messlink_node_a
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=messlink123
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - meshnet
+
+  node-b:
+    build: ./node-service
+    container_name: messlink-node-b
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_PROFILES_ACTIVE=node-b-docker
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/messlink_node_b
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=messlink123
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - meshnet
+
+  node-c:
+    build: ./node-service
+    container_name: messlink-node-c
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_PROFILES_ACTIVE=node-c-docker
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/messlink_node_c
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=messlink123
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - meshnet
+
+networks:
+  meshnet:
+    driver: bridge
