@@ -1,13 +1,29 @@
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
 
-import './index.css'
+import Hero from "./components/sections/Hero";
+import WhyMesh from "./components/sections/WhyMesh";
+import Architecture from "./components/sections/Architecture";
+import Modules from "./components/sections/Modules";
+import MessageContract from "./components/sections/MessageContract";
+import Team from "./components/sections/Team";
+import DemoTimeline from "./components/sections/DemoTimeline";
 
-function App() {
-
+export default function App() {
   return (
-    <>
-   <h2 className='navbar'>Messlink</h2>
-    </>
-  )
-}
+    <div className="min-h-screen bg-[#0A0E14] text-white selection:bg-[#3ECF8E] selection:text-black">
+      <Navbar />
 
-export default App
+      <main className="mx-auto max-w-7xl px-6">
+        <Hero />
+        <WhyMesh />
+        <Architecture />
+        <Modules />
+        <MessageContract />
+        <Team />
+        <DemoTimeline />
+      </main>
+      <Footer />
+    </div>
+  );
+}
