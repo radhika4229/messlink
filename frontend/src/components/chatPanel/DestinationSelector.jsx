@@ -7,7 +7,7 @@ function DestinationSelector () {
 
     return (
         <div class = "node" >
-            <h2>Destination Node:</h2>
+            <h2 className='destination-node'>Destination Node:</h2>
             <select onChange={handleNode}>
             <option value="Select a node" class="select-node">--select a Node--</option>
            {nodes.map(node => <option key={node}>{node}</option>)}

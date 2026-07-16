@@ -1,14 +1,23 @@
-import { StrictMode } from 'react'
+
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
 import TestHarness from './TestHarness.jsx'
+import ChatPanel from './components/chatPanel/ChatPanel.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
+<div className='dashboard'>
 
-    <TestHarness /> 
+
+    <main className="main">
+    <section className='testharness'>
+      <TestHarness />
+    </section>
+     <section className='chatPanel'>
+      <ChatPanel />
+      </section>
+      </main>
+      </div>
+    
   
-  </StrictMode>,
+  
 )

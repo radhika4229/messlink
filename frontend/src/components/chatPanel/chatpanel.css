@@ -1,3 +1,22 @@
-.select-node{
-    color: blue;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.chat-panel-title{
+    font-family: Open Sans;
+    font-size: 1.5em;
+    font-weight: 400;
 }
+.node-selection{
+    margin-top: 5px;
+    display:flex;
+    align-items: center;
+    gap:3px;
+}
+.active-node{
+     font-family: Open Sans;
+     font-size:1rem ;
+}
+.destination-node{
+     font-family: Open Sans;
+     font-size:1rem ;
+}
+

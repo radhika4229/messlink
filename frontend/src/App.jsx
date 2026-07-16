@@ -1,10 +1,11 @@
-import './App.css'
+
+import './index.css'
 
 function App() {
 
   return (
     <>
-    HELLO
+   <h2 className='navbar'>Messlink</h2>
     </>
   )
 }
