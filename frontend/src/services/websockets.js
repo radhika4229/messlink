@@ -27,16 +27,13 @@ export function usePulseSocket(nodeId, onMessageUpdate) {
     const upsertMessage = useCallback((incoming) => {
         setMessages((prev) => {
             const idx = prev.findIndex((m) => m.messageId === incoming.messageId);
-
             if (idx === -1) {
                 return [incoming, ...prev];
             }
-
             const next = [...prev];
             next[idx] = { ...next[idx], ...incoming };
             return next;
         });
-
         onMessageUpdateRef.current?.(incoming);
     }, []);
 
@@ -44,7 +41,6 @@ export function usePulseSocket(nodeId, onMessageUpdate) {
         if (!nodeId) return;
 
         const host = NODE_URL_MAP[nodeId];
-
         if (!host) {
             console.error(`usePulseSocket: unknown nodeId "${nodeId}"`);
             return;
@@ -52,41 +48,49 @@ export function usePulseSocket(nodeId, onMessageUpdate) {
 
         setConnectionStatus("connecting");
 
-        const socket = new WebSocket(`wss://${host}/ws/client/${nodeId}`);
-        socketRef.current = socket;
+        // ✅ FIX 1: Render free tier ko pehle HTTP se jagao
+        fetch(`https://${host}/api/node/status`)
+            .catch(() => {
+                // Node so raha tha — error ignore karo, WS try karte hain
+            })
+            .finally(() => {
+                if (!shouldReconnectRef.current) return;
 
-        socket.onopen = () => {
-            setConnectionStatus("connected");
-            reconnectAttemptRef.current = 0;
-        };
+                const socket = new WebSocket(`wss://${host}/ws/client/${nodeId}`);
+                socketRef.current = socket;
 
-        socket.onmessage = (event) => {
-            try {
-                const data = JSON.parse(event.data);
-                upsertMessage(data);
-            } catch (err) {
-                console.error("usePulseSocket: failed to parse incoming message", err);
-            }
-        };
+                socket.onopen = () => {
+                    setConnectionStatus("connected");
+                    reconnectAttemptRef.current = 0;
+                };
 
-        socket.onerror = (err) => {
-            console.error(`usePulseSocket: socket error on ${nodeId}`, err);
-        };
+                socket.onmessage = (event) => {
+                    try {
+                        const data = JSON.parse(event.data);
+                        upsertMessage(data);
+                    } catch (err) {
+                        console.error("usePulseSocket: failed to parse incoming message", err);
+                    }
+                };
 
-        socket.onclose = () => {
-            setConnectionStatus("disconnected");
-            socketRef.current = null;
+                socket.onerror = (err) => {
+                    console.error(`usePulseSocket: socket error on ${nodeId}`, err);
+                };
 
-            if (shouldReconnectRef.current) {
-                const delay = Math.min(
-                    RECONNECT_DELAY_MS * 2 ** reconnectAttemptRef.current,
-                    MAX_RECONNECT_DELAY_MS
-                );
+                socket.onclose = () => {
+                    setConnectionStatus("disconnected");
+                    socketRef.current = null;
 
-                reconnectAttemptRef.current += 1;
-                reconnectTimerRef.current = setTimeout(connect, delay);
-            }
-        };
+                    if (shouldReconnectRef.current) {
+                        const delay = Math.min(
+                            RECONNECT_DELAY_MS * 2 ** reconnectAttemptRef.current,
+                            MAX_RECONNECT_DELAY_MS
+                        );
+                        reconnectAttemptRef.current += 1;
+                        reconnectTimerRef.current = setTimeout(connect, delay);
+                    }
+                };
+            });
     }, [nodeId, upsertMessage]);
 
     useEffect(() => {
@@ -109,7 +113,6 @@ export function usePulseSocket(nodeId, onMessageUpdate) {
                 payload,
                 priority,
             });
-
             upsertMessage(message);
             return message;
         },

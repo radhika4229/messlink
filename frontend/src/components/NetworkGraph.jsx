@@ -1,21 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-/**
- * NetworkGraph — presentational component for the Messlink mesh simulator.
- *
- * Props:
- *   connections: { a_b: boolean, b_c: boolean }
- *   onToggleConnection: (nodeA: string, nodeB: string, connected: boolean) => void
- *   activeMessage: { hopPath: string[], priority: "NORMAL" | "SOS" } | null
- *
- * No backend calls here — purely driven by props. When `activeMessage` changes
- * (new object reference with a non-empty hopPath), the dot animates along the
- * given path at ~1.5s per hop.
- */
 
-// Layout: fixed viewBox, nodes at left/center/right, all coordinates derived
-// from this single source of truth so the SVG lines and the HTML node/toggle
-// overlays never drift apart.
 const VIEWBOX_W = 800;
 const VIEWBOX_H = 320;
 
