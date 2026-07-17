@@ -15,9 +15,34 @@ body {
     box-sizing: border-box;
 }
 
-#root {
-    width: 100%;
-    min-height: 100vh;
+.dashboard {
+  min-height: 100vh;
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+}
+/* .main-dashboard {
+  display: flex;
+  flex-direction: row;
+  gap: 150px;
+  margin-top: 20px;
+  height: 100%;
+} */
+/* .testharness {
+  background: #1e293b;
+  border-radius:12px;
+  padding: 20px;
+  height: 550px;
+} */
+.chatPanel {
+  background: #1e293b;
+  height: 550px;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* border-radius:12px; */
+  padding: 20px;
 }
 
 .dashboard {
@@ -35,19 +60,19 @@ body {
     height: 100%;
 }
 
-.testharness {
+/* .testharness {
     background: #1e293b;
     border-radius: 12px;
     padding: 20px;
     height: 550px;
-}
+} */
 
-.chatPanel {
+/* .chatPanel {
     background: #1e293b;
     height: 550px;
     border-radius: 12px;
     padding: 20px;
-}
+} */
 
 h1,
 h2 {
