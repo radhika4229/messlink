@@ -15,7 +15,7 @@ public class ConnectionManager {
     private final ConcurrentHashMap<String, WebSocketSession> clientSessions = new ConcurrentHashMap<>();
 
     private final Set<String> logicallyDisconnected = ConcurrentHashMap.newKeySet();
--
+
 
     public void registerPeerSession(String neighborId, WebSocketSession session) {
         peerSessions.put(neighborId, session);
