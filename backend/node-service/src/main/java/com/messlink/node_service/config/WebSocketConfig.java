@@ -23,6 +23,6 @@ public class WebSocketConfig implements WebSocketConfigurer {
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         registry.addHandler(peerWebSocketHandler, "/ws/peer").setAllowedOrigins("*");
-        registry.addHandler(clientWebSocketHandler, "/ws/client").setAllowedOrigins("*");
+        registry.addHandler(clientWebSocketHandler, "/ws/client/**").setAllowedOrigins("*");
     }
 }
