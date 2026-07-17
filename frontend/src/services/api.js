@@ -1,4 +1,3 @@
-
 const NODE_URL_MAP = {
   NODE_A: "https://messlink-node-a.onrender.com",
   NODE_B: "https://messlink-node-b.onrender.com",
@@ -7,18 +6,23 @@ const NODE_URL_MAP = {
 
 async function request(nodeId, path, options = {}) {
   const base = NODE_URL_MAP[nodeId];
+
   if (!base) {
     throw new Error(`Unknown nodeId "${nodeId}" — no backend URL mapped`);
   }
 
   const res = await fetch(`${base}${path}`, {
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+    },
     ...options,
   });
 
   if (!res.ok) {
     const body = await res.text().catch(() => "");
-    throw new Error(`${options.method || "GET"} ${path} failed: ${res.status} ${body}`);
+    throw new Error(
+        `${options.method || "GET"} ${path} failed: ${res.status} ${body}`
+    );
   }
 
   const text = await res.text();
