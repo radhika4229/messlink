@@ -40,7 +40,7 @@ const Dashboard = () => {
   }
 
   return (
-    <main className="main flex">
+    <main>
       <section className="graph-section">
         <NetworkGraph
           connections={connections}

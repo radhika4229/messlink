@@ -21,22 +21,26 @@ body {
   color: white;
   padding: 20px;
 }
-.main {
-  /* display: flex; */
-  /* flex-direction: column; */
+/* .main-dashboard {
+  display: flex;
+  flex-direction: row;
   gap: 150px;
   margin-top: 20px;
   height: 100%;
-}
-.testharness {
+} */
+/* .testharness {
   background: #1e293b;
-  /* border-radius:12px; */
+  border-radius:12px;
   padding: 20px;
   height: 550px;
-}
+} */
 .chatPanel {
   background: #1e293b;
   height: 550px;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
   /* border-radius:12px; */
   padding: 20px;
 }
@@ -56,19 +60,19 @@ body {
     height: 100%;
 }
 
-.testharness {
+/* .testharness {
     background: #1e293b;
     border-radius: 12px;
     padding: 20px;
     height: 550px;
-}
+} */
 
-.chatPanel {
+/* .chatPanel {
     background: #1e293b;
     height: 550px;
     border-radius: 12px;
     padding: 20px;
-}
+} */
 
 h1,
 h2 {
