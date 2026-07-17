@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 /**
- * NetworkGraph — presentational component for the Pulse mesh simulator.
+ * NetworkGraph — presentational component for the Messlink mesh simulator.
  *
  * Props:
  *   connections: { a_b: boolean, b_c: boolean }
